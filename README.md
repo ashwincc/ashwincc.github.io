@@ -1,2 +1,1 @@
-# ashwincc.github.io
-Personal website
+# Personal portfolio website.

@@ -1,187 +1,147 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <meta
-      name="description"
-      content="Hello!! My Name is Ashwin Mudhol. I'm a ML engineer "
-    />
-    <title>Ashwin Mudhol - Notesnook</title>
-    <meta name="created-on" content="Apr 22, 2023, 7:49 PM" />
-    <meta name="last-edited-on" content="Apr 22, 2023, 7:50 PM" />
-    
-    <style>
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-      border-radius: 5px;
-    }
-    
-    body {
-      background-color: transparent !important;
-      color: #202124;
-      font-family: "Open Sans", "Noto Sans", Frutiger, Calibri, Myriad, Arial,
-        Ubuntu, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #212121;
-    }
-    
-    pre.codeblock {
-      overflow-x: auto;
-    }
-    
-    iframe {
-      max-width: 100% !important;
-      background-color: transparent !important;
-    }
-    
-    li > p {
-      margin-top: 0px;
-      margin-bottom: 10px;
-    }
-    
-    .checklist > li {
-      list-style: none;
-      margin: 0.25em 0;
-    }
-    
-    .checklist > li::before {
-      content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cg%20id%3D%22checklist-unchecked%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Crect%20id%3D%22Rectangle%22%20width%3D%2215%22%20height%3D%2215%22%20x%3D%22.5%22%20y%3D%22.5%22%20fill-rule%3D%22nonzero%22%20stroke%3D%22%234C4C4C%22%20rx%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
-      cursor: pointer;
-      height: 1.1em;
-      margin-left: -2.5em;
-      margin-top: 0em;
-      position: absolute;
-      width: 1.5em;
-      padding-left: 1em;
-    }
-    
-    .checklist li.checked::before {
-      content: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cg%20id%3D%22checklist-checked%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Crect%20id%3D%22Rectangle%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23008837%22%20fill-rule%3D%22nonzero%22%20rx%3D%222%22%2F%3E%3Cpath%20id%3D%22Path%22%20fill%3D%22%23FFF%22%20fill-rule%3D%22nonzero%22%20d%3D%22M11.5703186%2C3.14417309%20C11.8516238%2C2.73724603%2012.4164781%2C2.62829933%2012.83558%2C2.89774797%20C13.260121%2C3.17069355%2013.3759736%2C3.72932262%2013.0909105%2C4.14168582%20L7.7580587%2C11.8560195%20C7.43776896%2C12.3193404%206.76483983%2C12.3852142%206.35607322%2C11.9948725%20L3.02491697%2C8.8138662%20C2.66090143%2C8.46625845%202.65798871%2C7.89594698%203.01850234%2C7.54483354%20C3.373942%2C7.19866177%203.94940006%2C7.19592841%204.30829608%2C7.5386474%20L6.85276923%2C9.9684299%20L11.5703186%2C3.14417309%20Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
-    }
-    
-    .checklist li.checked {
-      color: #505050;
-    }
-    
-    [dir="rtl"] .checklist > li::before {
-      margin-left: 0;
-      margin-right: -1.5em;
-    }
-    
-    blockquote {
-      border-left: 5px solid #e5e5e5;
-      padding-left: 10px;
-      margin-top: 0px;
-    }
-    
-    code:not(pre code) {
-      background-color: #f7f7f7;
-      border: 1px solid #e5e5e5;
-      border-radius: 5px;
-      padding: 3px 5px 0px 5px;
-      font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas,
-        Liberation Mono, Menlo, monospace !important;
-      font-size: 10pt !important;
-    }
-    
-    .ProseMirror code > span {
-      font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas,
-        Liberation Mono, Menlo, monospace !important;
-    }
-    
-    pre {
-      padding: 10px;
-      background-color: #e5e5e5;
-      border-radius: 5px;
-      font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas,
-        Liberation Mono, Menlo, monospace !important;
-        margin-bottom: 16px !important;
-    }
-    
-    table {
-      border-collapse: collapse;
-      margin: 0;
-      overflow: hidden;
-      table-layout: fixed;
-    }
-    
-    table td,
-    table th {
-      border: 1px solid #e5e5e5;
-      box-sizing: border-box;
-      min-width: 1em;
-      padding: 3px 5px;
-      position: relative;
-      vertical-align: top;
-    }
-    
-    table td > *,
-    table th > * {
-      margin-bottom: 0;
-    }
-    
-    table th {
-      background-color: #f7f7f7;
-      font-weight: bold;
-      text-align: left;
-    }
-    table p {
-      margin: 0;
-    }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/uikit.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/uikit.js"></script>
+    <script src="js/uikit-icons.js"></script>
 
-    code[class*="language-"],
-    pre[class*="language-"] 
-    {
-      color: #F8F8F2;
-      background:  #282A36;
-      text-shadow: none;
-      font-family: PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
-        monospace;
-      text-align: left;
-      white-space: pre;
-      word-spacing: normal;
-      word-break: normal;
-      word-wrap: normal;
-      line-height: 1.5;
-
-      -moz-tab-size: 4;
-      -o-tab-size: 4;
-      tab-size: 4;
-
-      -webkit-hyphens: none;
-      -moz-hyphens: none;
-      -ms-hyphens: none;
-      hyphens: none;
-    }
-
-    pre[class*="language-"] 
-    {
-      background: #282A36;
-      border-radius: 0.5em;
-      padding: 1em;
-      margin: 0.5em 0;
-      overflow: auto;
-      height: auto;
-    }
+    <title>Portfolio</title>
+</head>
+<body>
+<!-- Navigation Bar -->
+    <nav class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-visible@m uk-margin-xlarge-left uk-margin-xlarge-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     
-    :not(pre) > code[class*="language-"],
-    pre[class*="language-"] 
-    {
-      background: #282A36;
-    }
-    </style>
-  </head>
-  <body>
-    <h1>Ashwin Mudhol</h1>
-    <p data-spacing="double">Hello!! My Name is Ashwin Mudhol. I'm a ML engineer </p><p data-spacing="double">with 5 years of Automotive industry</p><p data-spacing="double">experience and working on Machine Learning use-cases</p><p data-spacing="double">with a keen interest on GPU accelerated AI computing.</p>
-  </body>
+    <div class="uk-navbar-left">
+        <a href="" class="uk-navbar-item uk-logo uk-light">Ashwin Mudhol.</a>
+    </div>
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav uk-light">
+            <li><a class="uk-button-text uk-text-capitalize" href="#about" uk-scroll>About</a></li>
+            <li><a class="uk-button-text uk-text-capitalize" href="#projects" uk-scroll>Projects</a></li>
+            <li><a class="uk-button-text uk-text-capitalize" href="mailto:ashwin.mudhol@proton.me" uk-scroll>Contact</a></li>
+
+        </ul>
+
+    </div>
+</nav>
+<!-- Navigation Bar Ends  -->
+
+<!-- Navigation Bar Mobile -->
+<nav class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-hidden@m uk-margin-xlarge-left uk-margin-xlarge-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    
+    <div class="uk-navbar-left">
+        <a href="" class="uk-navbar-item uk-logo uk-light">Ashwin Mudhol.</a>
+    </div>
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav uk-light">
+            <li><button uk-toggle="target: #offcanvas-nav" type="button" uk-navbar-toggle-icon></button></li>
+
+        </ul>
+
+    </div>
+</nav>
+<!-- Change This -->
+<div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            <li class="uk-active"><a href="#" uk-scroll>Home</a></li>
+            <li class="uk-active"><a href="#about" uk-scroll>About</a></li>
+            <li class="uk-active"><a href="#projects" uk-scroll>Projects</a></li>
+            <li class="uk-active"><a href="mailto:ashwin.mudhol@proton.me">Contact</a></li>
+
+        </ul>
+
+
+
+
+    </div>
+</div>
+
+<!-- Navigation Bar Mobile Ends -->
+<!-- Home -->
+<section class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+    <h1 class="uk-margin-xlarge-left uk-light uk-text-left uk-margin-xlarge-right">
+        I'm Ashwin, a Machine Learning Engineer, based out of Bengaluru, India.</h1>
+    <a href="#about" class="uk-margin-xlarge-left uk-text-capitalize uk-button uk-button-secondary" uk-scroll>About Me</a>
+
+
+</section>
+
+<!-- Home Ends -->
+<br>
+
+
+<hr class="uk-margin-xlarge-top uk-margin-xlarge-left uk-margin-xlarge-right">
+
+<!-- About Me -->
+<section id="about" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+<h3 class="uk-margin-xlarge-left uk-light">About Me</h3>
+<!-- Change here to ur paragraph -->
+<p class="uk-margin-xlarge-left uk-margin-xlarge-right">I have around 5 years of experience in the
+    intersecton of Automotive industry and Data Science. Experience on NLP frameworks & tools like Transformers,
+     Hugging-Face, Marian, OpenNMT, NLTK, Spacy.
+     Knowledge of Computer vision frameworks & tools like Tensorflow object detection, OpenCV, keras ocr.
+    Having experience in AWS Cloud environments like Sagemaker, EC2, AWS api’s and other services.
+    Experience on MLOps tools such as Kubeflow, mlflow.
+    <br>
+    <br>For more details here is my  
+    <a href="https://drive.proton.me/urls/4VAH1H2S98#TXmWioOqgC3X">resume</a>.</p>
+<a href="https://github.com/ashwincc" class="uk-margin-xlarge-left uk-light uk-button-text" uk-icon="github"></a> 
+<!-- &nbsp;<a href="" class="uk-light uk-button-text" uk-icon="dribbble"></a>  -->
+&nbsp;<a href="mailto:ashwin.mudhol@proton.me" class="uk-button-text uk-light" uk-icon="mail"></a> 
+&nbsp;<a href="https://www.linkedin.com/in/ashwinmudhol" class=" uk-light uk-button-text" uk-icon="linkedin"></a>
+
+<!-- About Me Ends -->
+
+
+
+
+</section>
+
+<!-- Projects Section -->
+<hr class="uk-margin-xlarge-left uk-margin-xlarge-right">
+<section id="projects" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+<h3 class="uk-margin-xlarge-left uk-light">Projects</h3>
+<p class="uk-margin-xlarge-left">Projects that i've been worked on:</p>
+
+<div class="uk-margin-xlarge-left uk-margin-xlarge-right">
+    <!-- Change all of this to ur projects -->
+    <div class="uk-margin uk-card uk-card-secondary uk-card-body ">
+        <h4>V2X application</h4>
+        <p>Designed and implemented e2e ML workflow architecture for V2x
+            application in AWS Wavelength (EKS) using Kubeflow and Nvidia tech
+            stack.</p>
+        <!-- <a class="uk-button-text uk-text-decoration-none" href="">
+            <span uk-icon="icon: link">
+            </span> Website Link </a> -->
+        </div>
+        <div class="uk-margin uk-card uk-card-secondary uk-card-body ">
+            <h4>Machine Translation</h4>
+            <p>Led the development of a Neural Machine Translation system for translating 
+                various Technical documents,Part attributes and Descriptions from 
+                English to Canadian French and Mexican Spanish which saves US $0.15 per
+                word translation cost to the company.</p>
+            <!-- <a class="uk-button-text uk-text-decoration-none" href="">
+                <span uk-icon="icon: link">
+                </span> Website Link </a> -->
+            </div></div>
+
+
+
+    <br>
+
+
+</section>
+<hr class="uk-margin-xlarge-left uk-margin-xlarge-right">
+</div>
+<!-- Projects Section Ends -->
+    
+</body>
 </html>
